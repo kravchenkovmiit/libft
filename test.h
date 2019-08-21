@@ -10,6 +10,7 @@ void	ft_putstr(char *str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 int		ft_isalpha(char c);
-
+int		ft_isdigit(int dig);
+void    ft_putnbr(int n);
 
 #endif

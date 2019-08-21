@@ -6,49 +6,56 @@ void	all_tests (char *str)
 	ft_putstr("test string: ");
 	ft_putstr(str);
 	ft_putchar('\n');
-	ft_putstr("FT_tolower\t");
-	ft_putchar(ft_tolower(str[0]));
 	ft_putchar('\n');
-	ft_putstr("ST_tolower\t");
-	ft_putchar(tolower(str[0]));
+	if (ft_tolower(str[0]) == tolower(str[0]))
+		ft_putstr("FT_tolower OK\n");
+	else
+		ft_putstr("FT_tolower KO KO KO\n");
 	ft_putchar('\n');
 
 	ft_putstr("test number: 33\n");
-	ft_putstr("FT_tolower\t");
-	ft_putchar(ft_tolower(33));
-	ft_putchar('\n');
-	ft_putstr("ST_tolower\t");
-	ft_putchar(tolower(33));
+	if (ft_tolower(33) == tolower(33))
+		ft_putstr("FT_tolower OK\n");
+	else
+		ft_putstr("FT_tolower KO KO KO\n");
 	ft_putchar('\n');
 
 	// test toupper
-	ft_putstr("test string: ");
-	ft_putstr(str);
-	ft_putchar('\n');
-	ft_putstr("FT_toupper\t");
-	ft_putchar(ft_toupper(str[0]));
-	ft_putchar('\n');
-	ft_putstr("ST_toupper\t");
-	ft_putchar(toupper(str[0]));
+	if (ft_toupper(str[0]) == toupper(str[0]))
+		ft_putstr("FT_toupper OK\n");
+	else
+		ft_putstr("FT_toupper KO KO KO\n");
 	ft_putchar('\n');
 
-	ft_putstr("test number: 33\n");
-	ft_putstr("FT_toupper\t");
-	ft_putchar(ft_toupper(33));
-	ft_putchar('\n');
-	ft_putstr("ST_toupper\t");
-	ft_putchar(toupper(33));
+	if (ft_toupper(33) == toupper(33))
+		ft_putstr("FT_toupper OK\n");
+	else
+		ft_putstr("FT_toupper KO KO KO\n");
 	ft_putchar('\n');
 
 	// test isalpha 
-	ft_putstr("test string: ");
-	ft_putstr(str);
+	if (ft_isalpha(str[0]) == isalpha(str[0]))
+		ft_putstr("FT_isalpha OK\n");
+	else if (ft_isalpha(str[0]) > 0 && isalpha(str[0]) > 0)
+		ft_putstr("FT_isalpha OK\n");
+	else
+		ft_putstr("FT_isalpha KO KO KO\n");
 	ft_putchar('\n');
-	ft_putstr("FT_isalpha\t");
-	printf("^%d", ft_isalpha(str[0]));
+	
+	// test isdigit 
+	if (ft_isdigit(str[0]) == isdigit(str[0]))
+		ft_putstr("FT_isdigit OK\n");
+	else if (ft_isdigit(str[0]) > 0 && isdigit(str[0]) > 0)
+		ft_putstr("FT_isdigit OK\n");
+	else
+		ft_putstr("FT_isdigit KO KO KO\n");
 	ft_putchar('\n');
-	ft_putstr("ST_isalpha\t");
-	printf("^%d", isalpha(str[0]));
+
+	ft_putstr("test number: 9\n");
+	if (ft_isdigit(9) == isdigit(9))
+		ft_putstr("FT_isdigit OK\n");
+	else
+		ft_putstr("FT_isdigit KO KO KO\n");
 	ft_putchar('\n');
 }
 
