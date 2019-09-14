@@ -1,18 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 20:42:15 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/06 21:25:36 by hvalenci         ###   ########.fr       */
+/*   Created: 2019/09/14 12:00:53 by hvalenci          #+#    #+#             */
+/*   Updated: 2019/09/14 13:52:34 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	write(1, &c, 1);
+	char	*res;
+	size_t	i;
+
+	i = 0;
+	res = (char *)haystack;
+	if (!(*needle))
+		return (res);
+	while (res[i])
+	{
+		if (res[i] - *needle == 0)
+			if (ft_strncmp(res + i, needle, ft_strlen(needle)) == 0)
+				return (res + i);
+		i++;
+	}
+	return (NULL);
 }

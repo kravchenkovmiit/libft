@@ -1,18 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 20:42:15 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/06 21:25:36 by hvalenci         ###   ########.fr       */
+/*   Created: 2019/09/11 21:05:56 by hvalenci          #+#    #+#             */
+/*   Updated: 2019/09/13 18:18:19 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	write(1, &c, 1);
+	unsigned char	*res;
+	unsigned char	*s;
+	size_t			i;
+
+	i = 0;
+	if (dst == NULL && src == NULL && len > 0)
+		return (NULL);
+	s = (unsigned char *)src;
+	res = (unsigned char *)dst;
+	if (dst > src)
+	{
+		while (len--)
+			res[len] = s[len];
+	}
+	else
+	{
+		while (len--)
+		{
+			res[i] = s[i];
+			i++;
+		}
+	}
+	return (dst);
 }

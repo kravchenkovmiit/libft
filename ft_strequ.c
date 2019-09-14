@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 20:42:15 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/06 21:25:36 by hvalenci         ###   ########.fr       */
+/*   Created: 2019/09/14 16:53:37 by hvalenci          #+#    #+#             */
+/*   Updated: 2019/09/14 16:58:05 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	write(1, &c, 1);
+	if (ft_strnequ(s1, s2, ft_strlen(s2)))
+		return (1);
+	else
+		return (0);
 }

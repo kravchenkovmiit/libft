@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 20:42:15 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/06 21:25:36 by hvalenci         ###   ########.fr       */
+/*   Created: 2019/09/14 17:40:47 by hvalenci          #+#    #+#             */
+/*   Updated: 2019/09/14 19:24:24 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	write(1, &c, 1);
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (dst[i])
+		i++;
+	if (i >= size)
+		return (i + size);
+	while (src[j] && j + i < size - 1)
+	{
+		dst[i + j] = src[j];
+		j++;
+	}
+	dst[i + j] = '\0';
+	return (i + ft_strlen(src));
 }

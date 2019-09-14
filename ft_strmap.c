@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 20:42:15 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/06 21:25:36 by hvalenci         ###   ########.fr       */
+/*   Created: 2019/09/10 19:30:55 by hvalenci          #+#    #+#             */
+/*   Updated: 2019/09/10 20:47:53 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	write(1, &c, 1);
+	char	*res;
+	size_t	i;
+
+	i = 0;
+	res = ft_strnew(ft_strlen(s));
+	if (res == NULL)
+		return (NULL);
+	while (s[i])
+	{
+		res[i] = f(s[i]);
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
 }

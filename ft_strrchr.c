@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/06 20:42:15 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/06 21:25:36 by hvalenci         ###   ########.fr       */
+/*   Created: 2019/09/14 11:42:45 by hvalenci          #+#    #+#             */
+/*   Updated: 2019/09/14 11:58:23 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putchar(char c)
+char	*ft_strrchr(const char *s, int c)
 {
-	write(1, &c, 1);
+	int		f;
+	char	*res;
+
+	f = 1;
+	res = ft_strchr(s, c);
+	if (res == NULL)
+		return (NULL);
+	while (*res && ft_strchr(s, c))
+	{
+		res = ft_strchr(s, c);
+		res++;
+	}
+	return (res);
 }
