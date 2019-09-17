@@ -25,7 +25,7 @@ static int ft_counter(char const *s, char c)
 	return(1 + ft_counter(s, c));
 }
 
-static	char	*ft_()
+static	char	*ft_addstringtoarr(char *fresh, char const *s)
 {
 	size_t	i;
 
