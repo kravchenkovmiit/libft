@@ -9,7 +9,7 @@ char    **ft_arrnew(size_t len)
     i = 0;
     if (len + 1 == 0)
         return (NULL);
-    fresh = (char *)malloc(sizeof(char *) * (len + 1));
+    fresh = (char **)malloc(sizeof(char *) * (len + 1));
     if (fresh == NULL)
         return (NULL);
     while (len--)
