@@ -15,6 +15,13 @@
 
 # include <string.h>
 
+typedef struct		s_list
+{
+	void		*content;
+	size_t		content_size;
+	struct s_list	*next;
+}			t_list;
+
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
 void	ft_putnbr(int n);
@@ -57,5 +64,7 @@ size_t	ft_strlen(const char *s);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strnew(size_t size);
 char	*ft_strdup(const char *s1);
+char	**ft_arrnew(size_t len);
+void	ft_arrdel(char **arr, size_t len);
 
 #endif
