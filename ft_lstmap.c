@@ -6,9 +6,14 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list	*begin_lst;
 	t_list	*tmp;
 
-	begin_lst = f(lst);
-	if (lst == NULL || begin_lst == NULL)
+	if (lst == NULL)
 		return (NULL);
+	begin_lst = f(lst);
+	if (begin_lst == NULL)
+	{
+		free(begin_lst);
+		return (NULL);
+	}
 	tmp = begin_list;
 	while (lst->next)
 	{
