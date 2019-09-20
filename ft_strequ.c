@@ -6,7 +6,7 @@
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 16:53:37 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/14 16:58:05 by hvalenci         ###   ########.fr       */
+/*   Updated: 2019/09/18 21:59:11 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int	ft_strequ(char const *s1, char const *s2)
 {
-	if (ft_strnequ(s1, s2, ft_strlen(s2)))
+	if (!(s1) || !(s2))
+		return (0);
+	if (ft_strcmp(s1, s2) == 0)
 		return (1);
 	else
 		return (0);

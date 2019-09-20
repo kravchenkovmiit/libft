@@ -6,7 +6,7 @@
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 20:46:10 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/06 20:46:18 by hvalenci         ###   ########.fr       */
+/*   Updated: 2019/09/18 20:37:44 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putstr(char *s)
 {
-	while (*s)
-		ft_putchar(*s++);
+	if (s)
+	{
+		while (*s)
+			ft_putchar(*s++);
+	}
 }

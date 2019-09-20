@@ -6,7 +6,7 @@
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 20:40:37 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/07 19:02:27 by hvalenci         ###   ########.fr       */
+/*   Updated: 2019/09/18 22:07:07 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ int	ft_isalpha(int c)
 	if (ft_isupper(c))
 		return (1);
 	if (ft_islower(c))
-		return (2);
+		return (1);
 	return (0);
 }

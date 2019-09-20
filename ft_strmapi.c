@@ -6,7 +6,7 @@
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 20:22:18 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/11 20:34:26 by hvalenci         ###   ########.fr       */
+/*   Updated: 2019/09/18 20:30:16 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 
 	i = 0;
+	if (!(s))
+		return (NULL);
 	res = ft_strnew(ft_strlen(s));
 	if (res == NULL)
 		return (NULL);

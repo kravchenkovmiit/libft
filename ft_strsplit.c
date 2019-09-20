@@ -6,10 +6,11 @@
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 20:00:46 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/16 20:58:15 by hvalenci         ###   ########.fr       */
+/*   Updated: 2019/09/18 20:20:34 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "libft.h"
 
 static int	ft_counter(char const *s, char c)
@@ -22,7 +23,7 @@ static int	ft_counter(char const *s, char c)
 		s++;
 	if (*s == '\0')
 		return (0);
-	return(1 + ft_counter(s, c));
+	return (1 + ft_counter(s, c));
 }
 
 static char	*ft_skipc(char *s, char c)
@@ -61,13 +62,20 @@ static char	**ft_arrfiller(char const *s, char c, size_t strnum, char **fresh)
 	return (fresh);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	size_t	strnum;
 	char	**fresh;
 
-	if (c == '\0' || s == NULL || *s == '\0')
+	if (c == '\0' || s == NULL)
 		return (NULL);
+	if (*s == '\0')
+	{
+		if (!(fresh = ft_arrnew(1)))
+			return (NULL);
+		fresh[0] = NULL;
+		return (fresh);
+	}
 	strnum = 0;
 	if (*s != c)
 		strnum = 1;

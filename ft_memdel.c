@@ -6,7 +6,7 @@
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 16:15:28 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/14 16:42:36 by hvalenci         ###   ########.fr       */
+/*   Updated: 2019/09/18 20:18:12 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_memdel(void **ap)
 {
-	free(*ap);
-	*ap = NULL;
+	if (ap && ap[0] != NULL)
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }

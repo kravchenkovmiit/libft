@@ -6,7 +6,7 @@
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/06 22:25:07 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/06 22:37:19 by hvalenci         ###   ########.fr       */
+/*   Updated: 2019/09/18 20:34:52 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	ft_putendl(char const *s)
 {
-	while (*s)
-		ft_putchar(*s++);
-	ft_putchar('\n');
+	if (s)
+	{
+		while (*s)
+			ft_putchar(*s++);
+		ft_putchar('\n');
+	}
 }

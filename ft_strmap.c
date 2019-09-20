@@ -6,7 +6,7 @@
 /*   By: hvalenci <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/10 19:30:55 by hvalenci          #+#    #+#             */
-/*   Updated: 2019/09/10 20:47:53 by hvalenci         ###   ########.fr       */
+/*   Updated: 2019/09/18 20:29:26 by hvalenci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	size_t	i;
 
 	i = 0;
+	if (!(s))
+		return (NULL);
 	res = ft_strnew(ft_strlen(s));
 	if (res == NULL)
 		return (NULL);
