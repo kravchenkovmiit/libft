@@ -31,7 +31,7 @@ SRC = ./ft_arrdel.c ./ft_arrnew.c ./ft_atoi.c ./ft_bzero.c ./ft_isalnum.c \
 
 OBJ = $(SRC:.c=.o)
 
-HEADER = ./libft.h
+HEADER = ./
 
 .PHONY: all clean fclean re
 

@@ -15,19 +15,11 @@
 char	*ft_strnew(size_t size)
 {
 	char	*fresh;
-	size_t	i;
 
-	i = 0;
 	if (size + 1 == 0)
 		return (NULL);
 	fresh = ft_memalloc(size + 1);
 	if (fresh == NULL)
 		return (NULL);
-	while (i <= size)
-	{
-		fresh[i] = '\0';
-		i++;
-	}
-	fresh[i] = '\0';
 	return (fresh);
 }
